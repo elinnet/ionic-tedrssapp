@@ -18,7 +18,7 @@ app.controller('FeedCtrl', function ($scope, $ionicLoading, FeedService) {
 	};
 });
 
-app.controller('PostCtrl', function ($scope, $stateParams, FeedService) {
+app.controller('PostCtrl', function ($scope, $stateParams, $window, FeedService) {
 	console.log("Loading PostCtrl");
 	console.log($stateParams); //this will get the url of what you click through
 	$scope.postId = $stateParams.id;
@@ -34,6 +34,7 @@ app.controller('PostCtrl', function ($scope, $stateParams, FeedService) {
 
 	$scope.readMore = function () {
 		console.debug("Read more post");
+		$window.open($scope.post.link, "_system", "location=yes" );
 	};
 
 });
