@@ -18,7 +18,7 @@ app.controller('FeedCtrl', function ($scope, $ionicLoading, FeedService) {
 	};
 });
 
-app.controller('PostCtrl', function ($scope, $stateParams, $window, FeedService) {
+app.controller('PostCtrl', function ($scope, $stateParams, $window, FeedService, $cordovaSocialSharing) {
 	console.log("Loading PostCtrl");
 	console.log($stateParams); //this will get the url of what you click through
 	$scope.postId = $stateParams.id;
@@ -30,6 +30,8 @@ app.controller('PostCtrl', function ($scope, $stateParams, $window, FeedService)
 
 	$scope.share = function () {
 		console.debug("Sharing post");
+		$cordovaSocialSharing
+	 	.share($scope.post.contentSnippet, $scope.post.title, $scope.post.thumbnail, $scope.post.link); // Share via native share sheet
 	};
 
 	$scope.readMore = function () {
