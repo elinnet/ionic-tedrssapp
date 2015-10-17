@@ -31,7 +31,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		.state('post', {
 			url: "/post/:id",
 			templateUrl: "templates/post.html",
-			controller: 'FeedCtrl'
+			controller: 'PostCtrl'
 		});
 
 	$urlRouterProvider.otherwise('/');

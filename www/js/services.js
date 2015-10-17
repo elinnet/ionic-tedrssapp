@@ -45,6 +45,7 @@ app.factory('FeedService', function ($http, $q, FEED_URL) {
 		for (var i = 0; i < self.posts.length; i++) {
 			var entry = self.posts[i];
 			if (entry.link == link) {
+				console.log(entry);
 				return entry;
 			}
 		}
